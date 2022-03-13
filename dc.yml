@@ -1,0 +1,37 @@
+version: '3.1'
+services:
+  mongo:
+    image: mongo
+    restart: always
+    ports:
+      - 27017:27017
+  postgres:
+    image: postgres:13.3
+    environment:
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "postgres"
+    ports:
+      - "5432:5432"
+  rabbitmq:
+    image: rabbitmq:management
+    restart: always
+    container_name: learn-rabbitmq-container
+    environment:
+      - RABBITMQ_DEFAULT_PASS="Ux22uapRTTeQ=rMfJBxgxtQq+V5fq3^LRcGYa+%T?%+JZ6Ru7j25kH9@H8+gYpGf"
+      - RABBITMQ_DEFAULT_USER="admin"
+    logging:
+      driver: 'json-file'
+      options:
+        max-size: '30m'
+        max-file: '10'
+    deploy:
+      resources:
+        limits:
+          memory: 1024M
+    ports:
+      - 8161:8161
+      - 61613:61613
+      - 61614:61614
+      - 61616:61616
+      - 15672:15672
+

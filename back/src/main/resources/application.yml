@@ -1,0 +1,47 @@
+spring:
+  rabbitmq: # see RabbitProperties
+    host: localhost
+    password: "Ux22uapRTTeQ=rMfJBxgxtQq+V5fq3^LRcGYa+%T?%+JZ6Ru7j25kH9@H8+gYpGf"
+    username: admin
+  datasource:
+    url: jdbc:h2:file:~/learn;DB_CLOSE_ON_EXIT=FALSE
+  h2:
+    console:
+      enabled: true
+  jpa:
+    hibernate:
+      ddl-auto: update
+      show-sql: true
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+
+server:
+  error:
+    include-message: always
+    include-binding-errors: always
+#  servlet:
+#    context-path: /api
+logging:
+  level:
+    root: info
+    org:
+      springframework:
+        amqp:
+          rabbit:
+            core:
+              RabbitAdmin: DEBUG
+      hibernate:
+        SQL: debug
+        orm:
+          jpa: debug
+
+amqp:
+  exchange:
+    attempts: "attempts:topic"
+
+
+
+
+
+
