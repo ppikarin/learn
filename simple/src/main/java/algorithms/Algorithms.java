@@ -24,7 +24,6 @@ public class Algorithms {
         System.out.println("--- END");
     }
 
-
     private static List<String> perms(String input) {
         if (input.length() == 1)
             return Collections.singletonList(input);
