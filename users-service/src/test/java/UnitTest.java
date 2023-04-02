@@ -24,4 +24,5 @@ public class UnitTest {
         assertNotNull(exception);
         assertEquals(INCORRECT_INPUT, exception.getMessage());
     }
+
 }

@@ -1,0 +1,16 @@
+com\ppikarin\Role.class
+com\ppikarin\Starter.class
+com\ppikarin\UserAccountDTO.class
+com\ppikarin\UserAccountService.class
+com\ppikarin\PrivilegeRepository.class
+com\ppikarin\RoleRepository.class
+com\ppikarin\UserAccountRepository.class
+com\ppikarin\UserAccount.class
+com\ppikarin\SecurityConfig.class
+com\ppikarin\MyUserDetailsService.class
+com\ppikarin\Privilege.class
+com\ppikarin\MainController.class
+com\ppikarin\Main.class
+com\ppikarin\MyBasicAuthenticationEntryPoint.class
+com\ppikarin\CorsFilter.class
+com\ppikarin\SwaggerConfig.class

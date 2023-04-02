@@ -1,0 +1,12 @@
+<h2>{{ userListTitle }}</h2>
+
+<!-- <p 
+    *ngFor="let user of users">
+    {{ user.email }}
+</p> -->
+
+<app-user-item 
+    *ngFor="let currentUser of users"
+    [userItem]='currentUser'>
+
+</app-user-item>

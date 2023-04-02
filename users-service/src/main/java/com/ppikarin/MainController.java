@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.List;
+
 import static com.ppikarin.UserAccountService.ROLE_ADMIN;
 
 @Controller
@@ -26,13 +28,13 @@ public class MainController {
 
     @GetMapping("/checkAuth")
     public @ResponseBody String checkAuth(String input) throws Exception {
-        return "checkauth, " + input;
+        return "checkAuth ok, " + input;
     }
 
     @PreAuthorize("hasRole('" + ROLE_ADMIN + "')")
     @GetMapping("/checkAdmin")
     public @ResponseBody String checkAdmin(String input) throws Exception {
-        return "checkauth, " + input;
+        return "checkAdmin ok, " + input;
     }
 
     @PreAuthorize("hasRole('" + ROLE_ADMIN + "')")
@@ -45,7 +47,12 @@ public class MainController {
     @GetMapping("/fill")
     public @ResponseBody String fill(String input) throws Exception {
         userAccountService.fill(10);
-        return "Hello, " + input;
+        return "filled ok";
+    }
+
+    @GetMapping("/get")
+    public @ResponseBody List<UserAccountDTO> get() throws Exception {
+        return userAccountService.get();
     }
 
 }
