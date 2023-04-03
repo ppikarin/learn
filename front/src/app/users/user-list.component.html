@@ -5,6 +5,25 @@
     {{ user.email }}
 </p> -->
 
+<h3>Add user</h3>
+
+<form #userForm="ngForm" (ngSubmit)="onUserSubmit(userForm.value)">
+
+    <label>firstName</label><br>
+    <input type="text" name="firstName" ngModel><br>
+
+    <label>lastName</label><br>
+    <input type="text" name="lastName" ngModel><br>
+
+    <label>email</label><br>
+    <input type="text" name="email" ngModel><br>
+
+    <input type="submit" value="Submit">
+
+</form>
+
+<h3>Current users</h3>
+
 <app-user-item 
     *ngFor="let currentUser of users"
     [userItem]='currentUser'>
